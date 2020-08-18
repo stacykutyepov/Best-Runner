@@ -14,6 +14,7 @@ flex-direction: column;
 justify-content: space-between;
 width: 300px;
 height: 420px;
+z-index: 5;
 `;
 
 export const NavContainer = styled.div`
