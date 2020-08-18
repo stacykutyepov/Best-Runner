@@ -1,5 +1,5 @@
 import WorkoutsTypes from "./workouts.types";
-import { addNewWorkout, deleteWorkout } from './workouts.utils';
+import { addNewWorkout, deleteWorkout, editWorkout } from './workouts.utils';
 
 const INITIAL_STATE = {
     hidden: false,
@@ -30,6 +30,11 @@ const workoutsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 workoutItems: deleteWorkout(state.workoutItems, action.payload)
+            }
+        case WorkoutsTypes.EDIT_WORKOUT:
+            return {
+                ...state,
+                workoutItems: editWorkout(state.workoutItems, action.payload)
             }
         default:
             return state;

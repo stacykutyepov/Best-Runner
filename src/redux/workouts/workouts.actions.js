@@ -13,3 +13,8 @@ export const deleteWorkout = (item) => ({
     type: WorkoutsTypes.DELETE_WORKOUT,
     payload: item
 })
+
+export const editWorkout = (item) => ({
+    type: WorkoutsTypes.EDIT_WORKOUT,
+    payload: item
+})
