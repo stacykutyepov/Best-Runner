@@ -8,3 +8,8 @@ export const addWorkout = (item) => ({
     type: WorkoutsTypes.ADD_NEW_WORKOUT,
     payload: item
 })
+
+export const deleteWorkout = (item) => ({
+    type: WorkoutsTypes.DELETE_WORKOUT,
+    payload: item
+})

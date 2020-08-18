@@ -1,9 +1,17 @@
 import WorkoutsTypes from "./workouts.types";
-import { addNewWorkout } from './workouts.utils';
+import { addNewWorkout, deleteWorkout } from './workouts.utils';
 
 const INITIAL_STATE = {
     hidden: false,
-    workoutItems: []
+    workoutItems: [
+        {
+            comment: "was a great sunny walk",
+            date: "2020-08-18",
+            distance: "2",
+            id: 0,
+            type: "walk",
+        }
+    ]
 }
 
 const workoutsReducer = (state = INITIAL_STATE, action) => {
@@ -17,6 +25,11 @@ const workoutsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 workoutItems: addNewWorkout(state.workoutItems, action.payload)
+            }
+        case WorkoutsTypes.DELETE_WORKOUT:
+            return {
+                ...state,
+                workoutItems: deleteWorkout(state.workoutItems, action.payload)
             }
         default:
             return state;
