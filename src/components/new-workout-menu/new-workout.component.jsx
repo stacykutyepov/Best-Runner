@@ -1,28 +1,24 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { FormContainer, NavContainer, Title } from "./new-workout.styles";
 import {
   addWorkout,
   toggleWorkoutWindow,
 } from "../../redux/workouts/workouts.actions";
-
+import Fab from "@material-ui/core/Fab";
 import {
-  TextField,
-  InputAdornment,
-  InputLabel,
-  FormControl,
-  Select,
-  Fab
-} from "@material-ui/core/";
-
-import { FormContainer, NavContainer, Title } from "./new-workout.styles";
+  TypesForm,
+  DistanceForm,
+  DateForm,
+  CommentForm,
+} from "../forms/workout-types.component";
 import CloseIcon from "@material-ui/icons/Close";
-
-import AddWorkout from '../add-workout/add-workout-component';
+import AddWorkout from "../add-workout/add-workout-component";
 
 const NewWorkout = ({ addWorkout, toggleWindow }) => {
   const [values, setValues] = useState({
     id: "",
-    distance: "",
+    distance: 0,
     date: new Date().toISOString().split("T")[0],
     type: "",
     comment: "",
@@ -45,46 +41,20 @@ const NewWorkout = ({ addWorkout, toggleWindow }) => {
           <CloseIcon />
         </Fab>
       </NavContainer>
-      <TextField
-        label="Distance"
-        id="distance"
-        onChange={handleChange("distance")}
-        InputProps={{
-          startAdornment: <InputAdornment position="start">km</InputAdornment>,
-        }}
-      />
+      <DistanceForm value={values.distance} onChange={handleChange("distance")} />
 
-      <TextField
-        id="date"
-        label="Date"
-        type="date"
-        defaultValue={values.date}
-        onChange={handleChange("date")}
-      />
+      <DateForm value={values.date} onChange={handleChange("date")} />
 
-      <FormControl>
-        <InputLabel htmlFor="type-native">Workout Type</InputLabel>
-        <Select native value={values.type} onChange={handleChange("type")}>
-          <option aria-label="None" value="" />
-          <option value={"walk"}>Walk</option>
-          <option value={"run"}>Run</option>
-          <option value={"bike"}>Bike</option>
-          <option value={"ski"}>Ski</option>
-        </Select>
-      </FormControl>
+      <TypesForm value={values.type} onChange={handleChange("type")} />
 
-      <TextField
-        id="add-comment"
-        onChange={handleChange("comment")}
-        label="Add a Comment"
-        multiline
-        rows={4}
-        variant="outlined"
-      />
-      <AddWorkout onClick={() => {
+      <CommentForm onChange={handleChange("comment")} />
+
+      <AddWorkout
+        onClick={() => {
           addWorkout(values);
           toggleWindow();
-        }}/>
+        }}
+      />
     </FormContainer>
   );
 };
