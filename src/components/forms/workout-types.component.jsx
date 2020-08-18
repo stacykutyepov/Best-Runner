@@ -4,7 +4,7 @@ import {
   InputAdornment,
   InputLabel,
   FormControl,
-  Select
+  Select,
 } from "@material-ui/core/";
 
 export const TypesForm = ({ value, onChange }) => {
@@ -37,19 +37,27 @@ export const DistanceForm = ({ value, onChange }) => {
 };
 
 export const DateForm = ({ value, onChange }) => {
-  return <TextField label="Date" id="date" value={value} type="date" onChange={onChange} />;
+  return (
+    <TextField
+      label="Date"
+      id="date"
+      value={value}
+      type="date"
+      onChange={onChange}
+    />
+  );
 };
 
-export const CommentForm = ({value, onChange}) => {
-    return(
-        <TextField
-        id="add-comment"
-        value={value}
-        onChange={onChange}
-        label="Your Comment"
-        multiline
-        rowsMax={4}
-        variant="outlined"
-      />
-    )
-}
+export const CommentForm = ({ value, onChange }) => {
+  return (
+    <TextField
+      id="add-comment"
+      value={value}
+      onChange={onChange}
+      label="Your Comment"
+      multiline
+      rowsMax={4}
+      variant="outlined"
+    />
+  );
+};
