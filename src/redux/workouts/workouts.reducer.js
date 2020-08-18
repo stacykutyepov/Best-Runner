@@ -1,5 +1,5 @@
 import WorkoutsTypes from "./workouts.types";
-import { addNewWorkout, deleteWorkout, editWorkout } from './workouts.utils';
+import { addNewWorkout, deleteWorkout, editWorkout, filterByDate, filterByDistance } from './workouts.utils';
 
 const INITIAL_STATE = {
     hidden: false,
@@ -7,7 +7,7 @@ const INITIAL_STATE = {
         {
             comment: "was a great sunny walk",
             date: "2020-08-18",
-            distance: "2",
+            distance: 2,
             id: 0,
             type: "walk",
         }
@@ -35,6 +35,16 @@ const workoutsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 workoutItems: editWorkout(state.workoutItems, action.payload)
+            }
+        case WorkoutsTypes.FILTER_BY_DATE:
+            return {
+                ...state,
+                workoutItems: filterByDate(state.workoutItems, action.payload)
+            }
+        case WorkoutsTypes.FILTER_BY_DISTANCE:
+            return {
+                ...state,
+                workoutItems: filterByDistance(state.workoutItems, action.payload)
             }
         default:
             return state;
