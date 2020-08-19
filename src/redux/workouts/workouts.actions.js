@@ -23,8 +23,3 @@ export const filterByDate = (filterType) => ({
     type: WorkoutsTypes.FILTER_BY_DATE,
     payload: filterType
 })
-
-export const filterByDistance = (filterType) => ({
-    type: WorkoutsTypes.FILTER_BY_DISTANCE,
-    payload: filterType
-})

@@ -1,17 +1,10 @@
 import WorkoutsTypes from "./workouts.types";
-import { addNewWorkout, deleteWorkout, editWorkout, filterByDate, filterByDistance } from './workouts.utils';
+import { addNewWorkout, deleteWorkout, editWorkout, filterByDate } from './workouts.utils';
 
 const INITIAL_STATE = {
     hidden: false,
-    workoutItems: [
-        {
-            comment: "was a great sunny walk",
-            date: "2020-08-18",
-            distance: 2,
-            id: 0,
-            type: "walk",
-        }
-    ]
+    visibilityFilter: "SHOW_ALL",
+    workoutItems: []
 }
 
 const workoutsReducer = (state = INITIAL_STATE, action) => {
@@ -39,13 +32,10 @@ const workoutsReducer = (state = INITIAL_STATE, action) => {
         case WorkoutsTypes.FILTER_BY_DATE:
             return {
                 ...state,
-                workoutItems: filterByDate(state.workoutItems, action.payload)
+                visibilityFilter: filterByDate(action.payload)
+
             }
-        case WorkoutsTypes.FILTER_BY_DISTANCE:
-            return {
-                ...state,
-                workoutItems: filterByDistance(state.workoutItems, action.payload)
-            }
+
         default:
             return state;
     }

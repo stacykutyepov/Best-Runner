@@ -4,7 +4,7 @@ const WorkoutsTypes = {
     DELETE_WORKOUT: "DELETE_WORKOUT",
     EDIT_WORKOUT: "EDIT_WORKOUT",
     FILTER_BY_DATE: "FILTER_BY_DATE",
-    FILTER_BY_DISTANCE: "FILTER_BY_DISTANCE"
+    FILTER_BY_TYPE: "FILTER_BY_TYPE"
 }
 
 export default WorkoutsTypes;
