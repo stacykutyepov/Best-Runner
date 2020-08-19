@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 import {
   toggleWorkoutWindow,
   deleteWorkout,
-  editWorkout
+  editWorkout,
 } from "../../redux/workouts/workouts.actions";
-import FilterHandler from '../filter/filter-handler.component';
-
+import FilterHandler from "../filter/filter-handler.component";
 import AddWorkout from "../add-workout/add-workout-component";
 import NewWorkout from "../new-workout-menu/new-workout.component";
 import WorkoutPreview from "../workout-preview/workout-preview.component";
+
+import makeGetVisibleTodos from '../../redux/workouts/workouts.selectors'
 
 const MainPage = ({
   hidden,
@@ -18,25 +19,25 @@ const MainPage = ({
   deleteWorkout,
   editWorkout,
 }) => {
+
   return (
     <div>
       <h1>Welcome!</h1>
       <AddWorkout onClick={toggleWindow} />
       {hidden ? <NewWorkout /> : null}
       <h1>Recent Activity</h1>
+
       <FilterHandler />
+
       {workoutItems.length ? (
-        workoutItems
-          // .slice()
-          // .sort((a, b) => new Date(b.date) - new Date(a.date))
-          .map((item) => (
-            <WorkoutPreview
-              key={item.id}
-              item={item}
-              deleteWorkout={deleteWorkout}
-              editWorkout={editWorkout}
-            />
-          ))
+        workoutItems.map((item) => (
+          <WorkoutPreview
+            key={item.id}
+            item={item}
+            deleteWorkout={deleteWorkout}
+            editWorkout={editWorkout}
+          />
+        ))
       ) : (
         <span>You dont have any workouts.</span>
       )}
@@ -46,13 +47,16 @@ const MainPage = ({
 
 const mapStateToProps = (state) => {
   const { workouts } = state;
-  return { hidden: workouts.hidden, workoutItems: workouts.workoutItems };
+  return {
+    hidden: workouts.hidden,
+    workoutItems: makeGetVisibleTodos()(state),
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({
   toggleWindow: () => dispatch(toggleWorkoutWindow()),
   deleteWorkout: (item) => dispatch(deleteWorkout(item)),
-  editWorkout: (item) => dispatch(editWorkout(item))
+  editWorkout: (item) => dispatch(editWorkout(item)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
