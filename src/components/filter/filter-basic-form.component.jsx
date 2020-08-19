@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -17,10 +16,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FilterData = ({ dispatchAction, values, title, text }) => {
+const FilterData = ({ dispatchAction, filterData }) => {
   const classes = useStyles();
-  const [date, setFilter] = React.useState("");
-  const [open, setOpen] = React.useState(false);
+  const [date, setFilter] = useState("");
+  const [open, setOpen] = useState(false);
 
   const handleChange = (event) => {
     setFilter(event.target.value);
@@ -36,31 +35,24 @@ const FilterData = ({ dispatchAction, values, title, text }) => {
   };
 
   return (
-    <div>
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-controlled-open-select-label">{title}</InputLabel>
-        <Select
-          labelId="demo-controlled-open-select-label"
-          id="demo-controlled-open-select"
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={date}
-          onChange={handleChange}
-        >
-          <MenuItem value="">
-            <em>{text}</em>
+    <FormControl className={classes.formControl}>
+      <InputLabel id="filter-input">Filter</InputLabel>
+      <Select
+        labelId="controlled-filter"
+        id="controlled-filter"
+        open={open}
+        onClose={handleClose}
+        onOpen={handleOpen}
+        value={date}
+        onChange={handleChange}
+      >
+        {filterData.map((item) => (
+          <MenuItem key={item.value} value={item.value}>
+            {item.title}
           </MenuItem>
-          {values.map((value, index) => (
-            <MenuItem key={index} value={`${value}`}>
-              {value}
-            </MenuItem>
-          ))}
-          {/* <MenuItem value={"oldest-newest"}>oldest - newest</MenuItem>
-          <MenuItem value={"newest-oldest"}>newest - oldest</MenuItem> */}
-        </Select>
-      </FormControl>
-    </div>
+        ))}
+      </Select>
+    </FormControl>
   );
 };
 
