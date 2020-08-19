@@ -41,7 +41,7 @@ const WorkoutPreview = ({ item, deleteWorkout, editWorkout }) => {
           <TextItalic>
             {values.date} || {values.distance} km || {values.type}
           </TextItalic>
-          <Text>{values.comment ? values.comment : "add a comment"} </Text>
+          <Text>{values.comment ? values.comment : "..."} </Text>
         </DataContainer>
       ) : (
         <TextContainer>
