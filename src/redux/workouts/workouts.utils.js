@@ -15,4 +15,3 @@ export const editWorkout = (workoutItems, editedItem) => {
 export const filterByDate = (filterType) => {
     return filterType
 }
-

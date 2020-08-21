@@ -13,10 +13,12 @@ const makeGetVisibleTodos = () => {
                 case 'SHOW_ALL':
                     return workouts
                         .slice()
+                        .reverse()
                         .sort((a, b) => new Date(b.date) - new Date(a.date))
 
                 case "NEWEST_OLDEST":
                     return workouts.slice()
+                        .reverse()
                         .sort((a, b) => new Date(b.date) - new Date(a.date));
 
                 case "OLDEST_NEWEST":
