@@ -10,3 +10,9 @@ height: 50%;
 width: 100%;
 margin-left: 10px;
 `
+
+export const Title = styled.h1`
+`
+
+export const MainPageContainer = styled.div`
+`

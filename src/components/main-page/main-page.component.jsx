@@ -1,16 +1,25 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   toggleWorkoutWindow,
   deleteWorkout,
   editWorkout,
 } from "../../redux/workouts/workouts.actions";
+
+import {
+  OptionsContainer,
+  ButtonContainer,
+  Title,
+  MainPageContainer,
+} from "./main-page.styles";
+import Button from "@material-ui/core/Button";
+import makeGetVisibleTodos from "../../redux/workouts/workouts.selectors";
+
 import FilterHandler from "../filter/filter-handler.component";
-import AddWorkout from "../add-workout/add-workout-component";
+import AddWorkout from "../add-workout-button/add-workout-button.component";
 import NewWorkout from "../new-workout-menu/new-workout.component";
 import WorkoutPreview from "../workout-preview/workout-preview.component";
-
-import makeGetVisibleTodos from '../../redux/workouts/workouts.selectors'
 
 const MainPage = ({
   hidden,
@@ -19,16 +28,20 @@ const MainPage = ({
   deleteWorkout,
   editWorkout,
 }) => {
-
   return (
-    <div>
-      <h1>Welcome!</h1>
+    <MainPageContainer>
+      <Title>Welcome to BestRunner!</Title>
       <AddWorkout onClick={toggleWindow} />
       {hidden ? <NewWorkout /> : null}
-      <h1>Recent Activity</h1>
-
-      <FilterHandler />
-
+      <Title>Recent Activity:</Title>
+      <OptionsContainer>
+        <FilterHandler />
+        <ButtonContainer>
+          <Link to="/chart">
+            <Button variant="contained">Weekly Chart</Button>
+          </Link>
+        </ButtonContainer>
+      </OptionsContainer>
       {workoutItems.length ? (
         workoutItems.map((item) => (
           <WorkoutPreview
@@ -41,7 +54,7 @@ const MainPage = ({
       ) : (
         <span>You dont have any workouts.</span>
       )}
-    </div>
+    </MainPageContainer>
   );
 };
 

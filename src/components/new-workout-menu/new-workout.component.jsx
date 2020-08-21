@@ -13,7 +13,7 @@ import {
   CommentForm,
 } from "../forms/workout-types.component";
 import CloseIcon from "@material-ui/icons/Close";
-import AddWorkout from "../add-workout/add-workout-component";
+import AddWorkout from "../add-workout-button/add-workout-button.component";
 
 const NewWorkout = ({ addWorkout, toggleWindow }) => {
   const [values, setValues] = useState({

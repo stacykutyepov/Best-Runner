@@ -9,7 +9,7 @@ export const deleteWorkout = (workoutItems, itemToDelete) => {
 
 export const editWorkout = (workoutItems, editedItem) => {
     const filteredWorkouts = workoutItems.filter(item => item.id !== editedItem.id)
-    return [...filteredWorkouts, editedItem]
+    return [...filteredWorkouts, { ...editedItem, distance: parseInt(editedItem.distance) }]
 }
 
 export const filterByDate = (filterType) => {
