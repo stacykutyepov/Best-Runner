@@ -21,8 +21,8 @@ This App allows you to track your workouts activity, and also to view the weekly
 ### App construction.
 * React.js to build the front-end;
 * Redux for state managemet;
-* Redux.router for routing;
-* Redux-reselect to implement complex filter, so it saves on calculations;
+* React-router for routing;
+* Redux-reselect to implement complex filter to memoize expensive calculations;
 * Material UI for Forms and Input Fields;
 * Canvas.js to make the weekly chart with the data;
 
