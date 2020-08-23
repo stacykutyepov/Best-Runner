@@ -2,7 +2,7 @@ import React from "react";
 import FilterData from "./filter-basic-form.component";
 import { connect } from "react-redux";
 import { filterByDate } from "../../redux/workouts/workouts.actions";
-import FILTER_DATA from "./filter.data";
+import FILTER_DATA from "./filter.actions";
 
 const FilterHandler = ({ filterByDate }) => {
   return (

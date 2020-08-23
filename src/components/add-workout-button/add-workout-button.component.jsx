@@ -11,5 +11,4 @@ const AddWorkout = ({ onClick }) => {
   );
 };
 
-
 export default AddWorkout;

@@ -36,7 +36,6 @@ class GraphChart extends React.Component {
           options={options}
         //   onRef={ref => this.chart = ref}
         />
-
       </div>
     );
   }
