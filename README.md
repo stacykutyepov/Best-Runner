@@ -27,6 +27,7 @@ ENGLISH BELOW &#8595;
 * Redux для управления состоянием приложения;
 * React-router для маршрутизации;
 * Reselect для реализации фильтра, и запоминания дорогостоящих вычислений;
+* Redux-persist для сохранения данных в localStorage;
 * Material UI для форм и полей ввода и UI компонентов;
 *Не использовала Formik/React-hook-form, потому что не было смысла в валидация форм.
 * Canvas.js для построения недельного графика с данными;
@@ -54,6 +55,7 @@ ___
 * Redux for state managemet;
 * React-router for routing;
 * Redux-reselect to implement complex filter to memoize expensive calculations;
+* Redux-persist to save data in localStorage;
 * Material UI for Forms and Input Fields;
 * Canvas.js to make the weekly chart with the data;
 
