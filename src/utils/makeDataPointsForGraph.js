@@ -9,11 +9,11 @@ var DaysOfTheWeek = {
 };
 
 export const makeDataPointForGraph = (weeksDistanceArray) => {
-  let dataPointsForGraph = [];
+  const dataPointsForGraph = [];
   for (let i = 0; i < weeksDistanceArray.length; i++) {
     for (let j = 0; j < weeksDistanceArray[i].length; j++) {
-      let value = DaysOfTheWeek[j];
-      let newObjData = {};
+      const value = DaysOfTheWeek[j];
+      const newObjData = {};
       newObjData["label"] = value;
       newObjData["y"] = weeksDistanceArray[i][j];
       dataPointsForGraph.push(newObjData);

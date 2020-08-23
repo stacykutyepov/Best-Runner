@@ -34,7 +34,7 @@ const makeGetVisibleTodos = () => {
                         .sort((a, b) => a.distance - b.distance);
 
                 default:
-                    return workouts.filter(item => item.type === visibilityFilter.toLowerCase());
+                    return workouts.filter(item => item.type === visibilityFilter);
             }
         }
     )

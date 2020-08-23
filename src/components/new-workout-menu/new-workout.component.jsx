@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { FormContainer, NavContainer, Title } from "./new-workout.styles";
 import {
@@ -63,5 +64,10 @@ const mapDispatchToProps = (dispatch) => ({
   addWorkout: (item) => dispatch(addWorkout(item)),
   toggleWindow: () => dispatch(toggleWorkoutWindow()),
 });
+
+NewWorkout.propTypes = {
+  addWorkout: PropTypes.func.isRequired,
+  toggleWindow: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(NewWorkout);

@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { Switch, Route } from "react-router-dom";
-import MainPage from './components/main-page/main-page.component';
-import GraphPage from './components/graph-page/graph-container';
+import MainPage from "./pages/main-page/main-page.component";
+import GraphPage from './pages/graph-page/graph-page.component';
 
 function App() {
   return (

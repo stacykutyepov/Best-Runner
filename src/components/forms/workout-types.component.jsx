@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   TextField,
   InputAdornment,
@@ -6,6 +7,12 @@ import {
   FormControl,
   Select,
 } from "@material-ui/core/";
+import { WORKOUT_TYPES } from "../../constants";
+
+const formPropTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export const TypesForm = ({ value, onChange }) => {
   return (
@@ -13,10 +20,11 @@ export const TypesForm = ({ value, onChange }) => {
       <InputLabel htmlFor="type-native">Workout Type</InputLabel>
       <Select native value={value} onChange={onChange}>
         <option aria-label="None" value="" />
-        <option value={"walk"}>Walk</option>
-        <option value={"run"}>Run</option>
-        <option value={"bike"}>Bike</option>
-        <option value={"ski"}>Ski</option>
+        {WORKOUT_TYPES.map((workout) => (
+          <option key={workout.value} value={workout.value}>
+            {workout.title}
+          </option>
+        ))}
       </Select>
     </FormControl>
   );
@@ -61,3 +69,8 @@ export const CommentForm = ({ value, onChange }) => {
     />
   );
 };
+
+TypesForm.propTypes = formPropTypes;
+DistanceForm.propTypes = formPropTypes;
+DateForm.propTypes = formPropTypes;
+CommentForm.propTypes = formPropTypes;

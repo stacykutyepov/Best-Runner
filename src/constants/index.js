@@ -1,4 +1,23 @@
-const FILTER_DATA = [
+export const WORKOUT_TYPES = [
+  {
+    title: "Walk",
+    value: "WALK",
+  },
+  {
+    title: "Run",
+    value: "RUN",
+  },
+  {
+    title: "Bike",
+    value: "BIKE",
+  },
+  {
+    title: "Ski",
+    value: "SKI",
+  },
+]
+
+export const FILTER_ACTIONS_DATA = [
   {
     title: "No Filters",
     value: "SHOW_ALL",
@@ -19,22 +38,5 @@ const FILTER_DATA = [
     title: "km: Min - Max",
     value: "MIN_MAX",
   },
-  {
-    title: "Walk",
-    value: "WALK",
-  },
-  {
-    title: "Run",
-    value: "RUN",
-  },
-  {
-    title: "Bike",
-    value: "BIKE",
-  },
-  {
-    title: "Ski",
-    value: "SKI",
-  },
+  ...WORKOUT_TYPES,
 ];
-
-export default FILTER_DATA;

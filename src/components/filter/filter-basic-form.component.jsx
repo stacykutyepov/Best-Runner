@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -16,14 +17,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FilterData = ({ dispatchAction, filterData }) => {
+const FilterData = ({ dispatchFilterAction, filterData, inputId, labelId }) => {
   const classes = useStyles();
-  const [date, setFilter] = useState("");
-  const [open, setOpen] = useState(false);
+  const [filter, setFilter] = useState("");
+  const [isOpen, setOpen] = useState(false);
 
   const handleChange = (event) => {
-    setFilter(event.target.value);
-    dispatchAction(event.target.value);
+    const { value } = event.target;
+    setFilter(value);
+    dispatchFilterAction(value);
   };
 
   const handleClose = () => {
@@ -36,14 +38,14 @@ const FilterData = ({ dispatchAction, filterData }) => {
 
   return (
     <FormControl className={classes.formControl}>
-      <InputLabel id="filter-input">Filter</InputLabel>
+      <InputLabel id={inputId}>Filter</InputLabel>
       <Select
-        labelId="controlled-filter"
-        id="controlled-filter"
-        open={open}
+        labelId={labelId}
+        id={labelId}
+        open={isOpen}
         onClose={handleClose}
         onOpen={handleOpen}
-        value={date}
+        value={filter}
         onChange={handleChange}
       >
         {filterData.map((item) => (
@@ -54,6 +56,13 @@ const FilterData = ({ dispatchAction, filterData }) => {
       </Select>
     </FormControl>
   );
+};
+
+FilterData.propTypes = {
+  dispatchFilterAction: PropTypes.func.isRequired,
+  filterData: PropTypes.array.isRequired,
+  inputId: PropTypes.string.isRequired,
+  labelId: PropTypes.string.isRequired,
 };
 
 export default FilterData;

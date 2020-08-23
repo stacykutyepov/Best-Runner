@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { IconButton } from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -39,7 +40,7 @@ const WorkoutPreview = ({ item, deleteWorkout, editWorkout }) => {
       {!isEditing ? (
         <DataContainer>
           <TextItalic>
-            {values.date} || {values.distance} km || {values.type}
+            {values.date} || {values.distance} km || {values.type.toLowerCase()}
           </TextItalic>
           <Text>{values.comment ? values.comment : "..."} </Text>
         </DataContainer>
@@ -58,35 +59,46 @@ const WorkoutPreview = ({ item, deleteWorkout, editWorkout }) => {
         </TextContainer>
       )}
 
-        <ButtonsContainer>
-          {isEditing ? (
-            <IconButton
-              aria-label="done"
-              color="primary"
-              onClick={() => {
-                setIsEditing(!isEditing);
-                editWorkout(values);
-              }}
-            >
-              <CheckCircleOutlineIcon />
-            </IconButton>
-          ) : (
-            <IconButton
-              aria-label="edit"
-              color="primary"
-              onClick={() => setIsEditing(!isEditing)}
-            >
-              <EditIcon />
-            </IconButton>
-          )}
-
-          <IconButton aria-label="delete" onClick={() => deleteWorkout(item)}>
-            <DeleteIcon />
+      <ButtonsContainer>
+        {isEditing ? (
+          <IconButton
+            aria-label="done"
+            color="primary"
+            onClick={() => {
+              setIsEditing(!isEditing);
+              editWorkout(values);
+            }}
+          >
+            <CheckCircleOutlineIcon />
           </IconButton>
-          
-        </ButtonsContainer>
+        ) : (
+          <IconButton
+            aria-label="edit"
+            color="primary"
+            onClick={() => setIsEditing(!isEditing)}
+          >
+            <EditIcon />
+          </IconButton>
+        )}
+
+        <IconButton aria-label="delete" onClick={() => deleteWorkout(item)}>
+          <DeleteIcon />
+        </IconButton>
+      </ButtonsContainer>
     </PreviewContainer>
   );
+};
+
+WorkoutPreview.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    distance: PropTypes.number.isRequired,
+    date: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    comment: PropTypes.string.isRequired,
+  }),
+  deleteWorkout: PropTypes.func.isRequired,
+  editWorkout: PropTypes.func.isRequired,
 };
 
 export default WorkoutPreview;

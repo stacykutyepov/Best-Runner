@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
@@ -11,7 +12,7 @@ import {
 } from "./getWeekNumber";
 import { makeDataPointForGraph } from "./makeDataPointsForGraph";
 
-import GraphChart from "../graph-chart/graph-chart.component";
+import GraphChart from "../bar-chart/bar-chart.component";
 
 const GraphPage = ({ workouts }) => {
   const workoutsArray = workouts.map((w) => {
@@ -58,6 +59,16 @@ const GraphPage = ({ workouts }) => {
 
 const mapStateToProps = (state) => {
   return { workouts: state.workouts.workoutItems };
+};
+
+GraphPage.prototype = {
+  workouts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      distance: PropTypes.number.isRequired,
+      date: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default connect(mapStateToProps)(GraphPage);
