@@ -18,8 +18,8 @@ class GraphChart extends React.Component {
         includeZero: true,
       },
       axisX: {
-        labelAngle: -30,
-        interval: 7,
+        labelAngle: -90,
+        interval: 1,
     },
       data: [
         {

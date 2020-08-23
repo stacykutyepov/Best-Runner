@@ -22,9 +22,11 @@ const GraphPage = ({ workouts }) => {
       dayNumber: d.getDay(),
     };
   });
+
   const workoutsByWeekNumber = groupedByWeekNumber(workoutsArray);
 
-  let lastWeek = Math.max(...Object.keys(workoutsByWeekNumber));
+  // let lastWeek = Math.max(...Object.keys(workoutsByWeekNumber));
+  let lastWeek = getWeekNumber(new Date())[1];
   let thisMonthWeeks = getPast4Weeks(lastWeek);
   let weeksWithDistance = [];
 
@@ -36,8 +38,6 @@ const GraphPage = ({ workouts }) => {
     }
     weeksWithDistance.push(result);
   }
-
-  console.log(makeDataPointForGraph(weeksWithDistance));
 
   const dataPointsForGraph = makeDataPointForGraph(weeksWithDistance.reverse());
 

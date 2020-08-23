@@ -12,7 +12,6 @@ export const getWeekNumber = (d) => {
   return [d.getUTCFullYear(), weekNo];
 }
 
-/// move this
 export const groupedByWeekNumber = (arrayOfWorkouts) => {
   return arrayOfWorkouts.reduce((memo, workout) => {
     if (memo[workout.weekNumber[1]] === undefined) {
