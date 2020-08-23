@@ -60,7 +60,12 @@ const FilterData = ({ dispatchFilterAction, filterData, inputId, labelId }) => {
 
 FilterData.propTypes = {
   dispatchFilterAction: PropTypes.func.isRequired,
-  filterData: PropTypes.array.isRequired,
+  filterData: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    })
+  ),
   inputId: PropTypes.string.isRequired,
   labelId: PropTypes.string.isRequired,
 };
