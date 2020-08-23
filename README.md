@@ -30,6 +30,7 @@ ENGLISH BELOW &#8595;
 * Redux-persist для сохранения данных в localStorage;
 * Material UI для форм и полей ввода и UI компонентов;
 *Не использовала Formik/React-hook-form, потому что не было смысла в валидация форм.
+* Styled-components, чтобы отделить стили и архитектуру элементов и сделать компоненты удобочитаемыми.
 * Canvas.js для построения недельного графика с данными;
 
 ___ 
@@ -57,6 +58,7 @@ ___
 * Redux-reselect to implement complex filter to memoize expensive calculations;
 * Redux-persist to save data in localStorage;
 * Material UI for Forms and Input Fields;
+* Styled Components to keep the concerns of styling and element architecture separated and make components more readable.
 * Canvas.js to make the weekly chart with the data;
 
 ### What Would I Like to Improve?
