@@ -12,6 +12,6 @@ export const editWorkout = (workoutItems, editedItem) => {
     return [...filteredWorkouts, { ...editedItem, distance: parseInt(editedItem.distance) }]
 }
 
-export const filterByDate = (filterType) => {
+export const filterByData = (filterType) => {
     return filterType
 }

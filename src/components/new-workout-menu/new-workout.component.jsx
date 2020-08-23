@@ -41,12 +41,12 @@ const NewWorkout = ({ addWorkout, toggleWindow }) => {
           <CloseIcon />
         </Fab>
       </NavContainer>
-      <DistanceForm value={values.distance} onChange={handleChange("distance")} />
-
+      <DistanceForm
+        value={values.distance}
+        onChange={handleChange("distance")}
+      />
       <DateForm value={values.date} onChange={handleChange("date")} />
-
       <TypesForm value={values.type} onChange={handleChange("type")} />
-
       <CommentForm onChange={handleChange("comment")} />
 
       <AddWorkout

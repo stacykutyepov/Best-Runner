@@ -19,7 +19,7 @@ export const editWorkout = (item) => ({
     payload: item
 })
 
-export const filterByDate = (filterType) => ({
-    type: WorkoutsTypes.FILTER_BY_DATE,
+export const filterByData = (filterType) => ({
+    type: WorkoutsTypes.FILTER_BY_DATA,
     payload: filterType
 })

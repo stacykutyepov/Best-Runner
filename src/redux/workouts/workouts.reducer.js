@@ -1,5 +1,5 @@
 import WorkoutsTypes from "./workouts.types";
-import { addNewWorkout, deleteWorkout, editWorkout, filterByDate } from './workouts.utils';
+import { addNewWorkout, deleteWorkout, editWorkout, filterByData } from './workouts.utils';
 
 const INITIAL_STATE = {
     hidden: false,
@@ -29,11 +29,10 @@ const workoutsReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 workoutItems: editWorkout(state.workoutItems, action.payload)
             }
-        case WorkoutsTypes.FILTER_BY_DATE:
+        case WorkoutsTypes.FILTER_BY_DATA:
             return {
                 ...state,
-                visibilityFilter: filterByDate(action.payload)
-
+                visibilityFilter: filterByData(action.payload)
             }
 
         default:
