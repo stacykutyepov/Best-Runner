@@ -1,4 +1,5 @@
 import React from "react";
+import SmoothScroll from "smooth-scroll";
 import {
   HeaderContainer,
   Wave,
@@ -8,11 +9,14 @@ import {
 import CustomButton from "../custom-button/custom-button.component";
 
 const Header = () => {
+  const scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 600,
+  });
   return (
     <HeaderContainer>
       <TextContainer>
         <HeaderTitle>Welcome to BestRunner!</HeaderTitle>
-        <a href="#explore">
+        <a data-scroll href="#explore">
           <CustomButton>Explore</CustomButton>
         </a>
       </TextContainer>
