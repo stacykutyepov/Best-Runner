@@ -12,7 +12,19 @@ margin-left: 10px;
 `
 
 export const Title = styled.h1`
+@media (max-width: 420px) {
+font-size: 1.6rem;
+}
 `
 
 export const MainPageContainer = styled.div`
+margin: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+max-width: 400px;
+@media (max-width: 420px) {
+max-width: 300px;
+
+}
 `
