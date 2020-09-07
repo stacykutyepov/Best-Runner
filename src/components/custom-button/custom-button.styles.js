@@ -23,7 +23,7 @@ export const CustomButtonContainer = styled.button`
   &:hover {
     outline: none;
     background-color: #ffffff;
-text-shadow: 1px 1px 1px lightblue;
+    text-shadow: 1px 1px 1px lightblue;
     color: #000000;
     border: 2px solid lightblue;
   }
