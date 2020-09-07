@@ -13,6 +13,7 @@ const Header = () => {
     const scroll = new SmoothScroll('a[href*="#"]', {
       speed: 600,
     });
+    console.log(scroll);
   }, []);
 
   return (
