@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import { ButtonContainer } from "./graph-page.styles";
+import { ButtonContainer, GraphPageContainer } from "./graph-page.styles";
 import { convertWorkoutsToBarChartData } from "../../utils/convertWorkoutsToBarChartData";
 import GraphChart from "../../components/bar-chart/bar-chart.component";
 
 const GraphPage = ({ workouts }) => {
   const dataPointsForGraph = convertWorkoutsToBarChartData(workouts);
   return (
-    <div>
+    <GraphPageContainer>
       <ButtonContainer>
-        <Link to="/">
+        <Link to="/main">
           <Button variant="contained">Back to Workouts</Button>
         </Link>
       </ButtonContainer>
@@ -20,7 +20,7 @@ const GraphPage = ({ workouts }) => {
         distanceData={dataPointsForGraph}
         title={"Your Weekly Distance Chart"}
       />
-    </div>
+    </GraphPageContainer>
   );
 };
 
