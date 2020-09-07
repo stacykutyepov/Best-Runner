@@ -1,9 +1,8 @@
 .App {
- font-family: Roboto, sans-serif;
- margin: 40px;
+  font-family: Roboto, sans-serif;
+  /* margin: 40px; */
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-
