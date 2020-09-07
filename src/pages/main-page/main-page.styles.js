@@ -12,6 +12,7 @@ margin-left: 10px;
 `
 
 export const Title = styled.h1`
+margin-top: 60px;
 @media (max-width: 420px) {
 font-size: 1.6rem;
 }

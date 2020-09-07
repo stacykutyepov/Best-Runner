@@ -10,7 +10,6 @@ import {
 import { WORKOUT_TYPES } from "../../constants";
 
 const formPropTypes = {
-  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
