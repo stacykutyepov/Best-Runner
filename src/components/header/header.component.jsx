@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import SmoothScroll from "smooth-scroll";
+import React from "react";
 import {
   HeaderContainer,
   Wave,
@@ -9,13 +8,6 @@ import {
 import CustomButton from "../custom-button/custom-button.component";
 
 const Header = () => {
-  useEffect(() => {
-    const scroll = new SmoothScroll('a[href*="#"]', {
-      speed: 600,
-    });
-    console.log(scroll);
-  }, []);
-
   return (
     <HeaderContainer>
       <TextContainer>
