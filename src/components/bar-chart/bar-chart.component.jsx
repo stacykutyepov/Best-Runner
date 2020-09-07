@@ -31,10 +31,7 @@ const BarChart = ({ distanceData, title }) => {
 
   return (
     <div>
-      <CanvasJSChart
-        options={options}
-        //   onRef={ref => this.chart = ref}
-      />
+      <CanvasJSChart options={options} />
     </div>
   );
 };

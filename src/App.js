@@ -7,7 +7,7 @@ import IntroPage from './pages/intro-page/intro-page.component';
 
 function App() {
   return (
-    < div className="App" >
+    <div className="App">
       <Switch>
         <Route exact path="/" component={IntroPage} />
         <Route exact path="/main" component={MainPage} />

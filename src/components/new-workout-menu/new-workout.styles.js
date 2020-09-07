@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const FormContainer = styled.div`
 position: fixed;
 top: 20px;
-left: 30px;
 margin: 20px auto;
 box-shadow: 0 2px 8px -3px black;
 border-radius: 20px;
