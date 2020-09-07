@@ -6,6 +6,8 @@ max-width: 300px;
 align-items: center;
 `
 export const ButtonContainer = styled.div`
+display: flex;
+justify-content: center;
 height: 50%;
 width: 100%;
 margin-left: 10px;
