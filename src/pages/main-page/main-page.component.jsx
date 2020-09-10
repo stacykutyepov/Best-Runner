@@ -35,10 +35,10 @@ const MainPage = ({
   return (
     <MuiThemeProvider theme={orangeTheme}>
       <MainPageContainer>
+        {hidden ? <NewWorkout /> : null}
         <ButtonContainer>
           <AddWorkout onClick={toggleWindow} />
         </ButtonContainer>
-        {hidden ? <NewWorkout /> : null}
         <Title>Activities:</Title>
         <OptionsContainer>
           <FilterHandler />
