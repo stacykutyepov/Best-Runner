@@ -7,7 +7,7 @@ margin: 20px auto;
 box-shadow: 0 2px 8px -3px black;
 border-radius: 20px;
 background-color: white;
-padding: 10px;
+padding: 20px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;

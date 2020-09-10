@@ -3,11 +3,11 @@ import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import PropTypes from "prop-types";
 
-const AddWorkout = ({ onClick }) => {
+const AddWorkout = ({ onClick, children }) => {
   return (
-    <Fab variant="extended" color="primary" aria-label="add" onClick={onClick}>
+    <Fab color="primary" variant="extended" aria-label="add" onClick={onClick}>
       <AddIcon />
-      Add Workout
+      {children}
     </Fab>
   );
 };

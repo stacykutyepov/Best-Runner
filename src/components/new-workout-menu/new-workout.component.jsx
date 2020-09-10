@@ -60,8 +60,7 @@ const NewWorkout = ({ addWorkout, toggleWindow }) => {
       <DateForm value={values.date} onChange={handleChange("date")} />
       <TypesForm value={values.type} onChange={handleChange("type")} />
       <CommentForm onChange={handleChange("comment")} />
-
-      <AddWorkout onClick={submit} />
+      <AddWorkout onClick={submit}>Add Workout</AddWorkout>
     </FormContainer>
   );
 };
