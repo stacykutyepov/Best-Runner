@@ -17,9 +17,9 @@ z-index: 5;
 
 @media (max-width: 420px) {
     width: 90vw;
-    height: 85vh;
+    height: 80vh;
     top: 0;
-    padding: 20px 50px 120px 50px;
+    padding: 30px 50px 160px 50px;
     margin: 0;
 }
 
