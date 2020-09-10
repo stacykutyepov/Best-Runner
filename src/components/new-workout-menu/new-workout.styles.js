@@ -14,6 +14,15 @@ justify-content: space-between;
 width: 300px;
 height: 420px;
 z-index: 5;
+
+@media (max-width: 420px) {
+    width: 90vw;
+    height: 95vh;
+    top: 0;
+    padding: 20px 50px;
+    margin: 0;
+}
+
 `;
 
 export const NavContainer = styled.div`
