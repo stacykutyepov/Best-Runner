@@ -19,7 +19,6 @@ z-index: 5;
     width: 80vw;
     height: 80vh;
     top: 0;
-    right: 0;
     padding: 30px 50px 160px 50px;
     padding-bottom: 160px;
     margin: 0;
