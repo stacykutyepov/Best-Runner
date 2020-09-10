@@ -15,6 +15,7 @@ export const PreviewContainer = styled.div`
 `;
 
 export const DataContainer = styled.div`
+padding: 10px 0px;
 display: flex;
 justify-content: space-between;
 min-width: 260px;

@@ -31,15 +31,15 @@ const MainPage = ({
 }) => {
   return (
     <MainPageContainer>
-      <Title>Welcome to BestRunner!</Title>
+      <Title>Welcome Back!</Title>
       <AddWorkout onClick={toggleWindow} />
       {hidden ? <NewWorkout /> : null}
-      <Title>Recent Activity:</Title>
+      <Title>Activities:</Title>
       <OptionsContainer>
         <FilterHandler />
         <ButtonContainer>
           <Link to="/chart">
-            <Button variant="contained">Weekly Chart</Button>
+            <Button variant="outlined">Chart</Button>
           </Link>
         </ButtonContainer>
       </OptionsContainer>
