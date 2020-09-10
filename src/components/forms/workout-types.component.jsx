@@ -29,13 +29,14 @@ export const TypesForm = ({ value, onChange }) => {
   );
 };
 
-export const DistanceForm = ({ value, onChange }) => {
+export const DistanceForm = ({ error, value, onChange }) => {
   return (
     <TextField
       label="Distance"
       id="distance"
       value={value}
       onChange={onChange}
+      error={error}
       InputProps={{
         startAdornment: <InputAdornment position="start">km</InputAdornment>,
       }}

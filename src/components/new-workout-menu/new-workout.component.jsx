@@ -17,6 +17,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import AddWorkout from "../add-workout-button/add-workout-button.component";
 
 const NewWorkout = ({ addWorkout, toggleWindow }) => {
+  const [distanceError, setDistanceError] = useState(false);
   const [values, setValues] = useState({
     id: "",
     distance: 0,
@@ -24,6 +25,15 @@ const NewWorkout = ({ addWorkout, toggleWindow }) => {
     type: "",
     comment: "",
   });
+
+  const submit = () => {
+    if (isNaN(values.distance)) {
+      setDistanceError(true);
+    } else {
+      addWorkout(values);
+      toggleWindow();
+    }
+  };
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -43,6 +53,7 @@ const NewWorkout = ({ addWorkout, toggleWindow }) => {
         </Fab>
       </NavContainer>
       <DistanceForm
+        error={distanceError}
         value={values.distance}
         onChange={handleChange("distance")}
       />
@@ -50,12 +61,7 @@ const NewWorkout = ({ addWorkout, toggleWindow }) => {
       <TypesForm value={values.type} onChange={handleChange("type")} />
       <CommentForm onChange={handleChange("comment")} />
 
-      <AddWorkout
-        onClick={() => {
-          addWorkout(values);
-          toggleWindow();
-        }}
-      />
+      <AddWorkout onClick={submit} />
     </FormContainer>
   );
 };
