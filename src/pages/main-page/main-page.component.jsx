@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+
 import {
   toggleWorkoutWindow,
   deleteWorkout,
@@ -13,6 +15,7 @@ import {
   ButtonContainer,
   Title,
   MainPageContainer,
+  orangeTheme,
 } from "./main-page.styles";
 import Button from "@material-ui/core/Button";
 import makeGetVisibleTodos from "../../redux/workouts/workouts.selectors";
@@ -30,32 +33,33 @@ const MainPage = ({
   editWorkout,
 }) => {
   return (
-    <MainPageContainer>
-      <Title>Welcome Back!</Title>
-      <AddWorkout onClick={toggleWindow} />
-      {hidden ? <NewWorkout /> : null}
-      <Title>Activities:</Title>
-      <OptionsContainer>
-        <FilterHandler />
+    <MuiThemeProvider theme={orangeTheme}>
+      <MainPageContainer>
         <ButtonContainer>
+          <AddWorkout onClick={toggleWindow} />
+        </ButtonContainer>
+        {hidden ? <NewWorkout /> : null}
+        <Title>Activities:</Title>
+        <OptionsContainer>
+          <FilterHandler />
           <Link to="/chart">
             <Button variant="outlined">Chart</Button>
           </Link>
-        </ButtonContainer>
-      </OptionsContainer>
-      {workoutItems.length ? (
-        workoutItems.map((item) => (
-          <WorkoutPreview
-            key={item.id}
-            item={item}
-            deleteWorkout={deleteWorkout}
-            editWorkout={editWorkout}
-          />
-        ))
-      ) : (
-        <span>You dont have any workouts.</span>
-      )}
-    </MainPageContainer>
+        </OptionsContainer>
+        {workoutItems.length ? (
+          workoutItems.map((item) => (
+            <WorkoutPreview
+              key={item.id}
+              item={item}
+              deleteWorkout={deleteWorkout}
+              editWorkout={editWorkout}
+            />
+          ))
+        ) : (
+          <span>You dont have any workouts.</span>
+        )}
+      </MainPageContainer>
+    </MuiThemeProvider>
   );
 };
 
