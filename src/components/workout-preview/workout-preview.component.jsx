@@ -4,6 +4,7 @@ import { IconButton } from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+import TypePreview from "../workout-type-preview/workout-type-preview.component";
 import {
   TypesForm,
   DistanceForm,
@@ -13,11 +14,13 @@ import {
 
 import {
   PreviewContainer,
-  TextItalic,
   Text,
+  CommentText,
   ButtonsContainer,
   DataContainer,
   TextContainer,
+  DistanceNumber,
+  Column,
 } from "./workout-preview.styles";
 
 const WorkoutPreview = ({ item, deleteWorkout, editWorkout }) => {
@@ -39,10 +42,17 @@ const WorkoutPreview = ({ item, deleteWorkout, editWorkout }) => {
     <PreviewContainer>
       {!isEditing ? (
         <DataContainer>
-          <TextItalic>
-            {values.date} || {values.distance} km || {values.type.toLowerCase()}
-          </TextItalic>
-          <Text>{values.comment ? values.comment : "..."} </Text>
+          <Column>
+            <TypePreview type={values.type} />
+            <CommentText>{values.comment ? values.comment : "..."}</CommentText>
+          </Column>
+          <Column>
+            <Text>
+              <DistanceNumber>{values.distance}</DistanceNumber>
+              km
+            </Text>
+            <Text>{values.date}</Text>
+          </Column>
         </DataContainer>
       ) : (
         <TextContainer>
@@ -74,7 +84,6 @@ const WorkoutPreview = ({ item, deleteWorkout, editWorkout }) => {
         ) : (
           <IconButton
             aria-label="edit"
-            color="primary"
             onClick={() => setIsEditing(!isEditing)}
           >
             <EditIcon />

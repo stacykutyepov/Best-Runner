@@ -1,46 +1,65 @@
 import styled from "styled-components";
+const lightGrey = '#F5F5F5';
+const darkGrey = '#505050';
+const orange = '#FF4500';
 
 export const PreviewContainer = styled.div`
   display: flex;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-top: 10px;
+  padding: 10px 20px;
   justify-content: space-between;
-  max-width: 290px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px -3px black;
-
+  width: 300px;
+  border-radius: 20px;
+  background-color: ${lightGrey};
+  color: ${darkGrey};
 `;
 
 export const DataContainer = styled.div`
 display: flex;
-flex-direction: column;
-  justify-content: space-between;
-  align-items: center; 
+justify-content: space-between;
+min-width: 260px;
 `;
+
+export const Column = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+max-width: 140px;
+`
 
 export const ButtonsContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  max-height: 104px;
+`;
+
+export const CommentText = styled.span`
+  padding-top: 5px;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  align-self: flex-start;
 `;
 
 export const Text = styled.span`
-display: block;
-  line-height: 1.5rem;
-  align-self: flex-start;
-
+  font-weight: 500;
 `;
 
-export const TextItalic = styled.span`
-  font-style: italic;
+
+export const DistanceNumber = styled.span`
   font-weight: 600;
-`;
+  font-size: 2.5rem;
+  padding-right: 5px;
+  color: ${orange};
+`
 
 export const TextContainer = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-width: 60%;
+max-width: 290px;
 min-height: 270px;
 max-height: 300px;
 margin-bottom: 10px;

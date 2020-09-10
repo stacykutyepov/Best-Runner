@@ -2,22 +2,26 @@ export const WORKOUT_TYPES = [
   {
     title: "Walk",
     value: "WALK",
-    imageUrl: "https://i.ibb.co/vcNZG6q/walk.png"
+    imageUrl: "https://i.ibb.co/vcNZG6q/walk.png",
+    svg: "../../assets/icons/walk.svg"
   },
   {
     title: "Run",
     value: "RUN",
-    imageUrl: "https://i.ibb.co/2MStD01/run.png"
+    imageUrl: "https://i.ibb.co/2MStD01/run.png",
+    svg: "../../assets/icons/run.svg"
   },
   {
     title: "Bike",
     value: "BIKE",
-    imageUrl: "https://i.ibb.co/hB4jLcX/bike.png"
+    imageUrl: "https://i.ibb.co/hB4jLcX/bike.png",
+    svg: "../../assets/icons/bike.svg"
   },
   {
     title: "Ski",
     value: "SKI",
-    imageUrl: "https://i.ibb.co/wsFCXvr/ski.png"
+    imageUrl: "https://i.ibb.co/wsFCXvr/ski.png",
+    svg: "../../assets/icons/ski.svg"
   },
 ]
 

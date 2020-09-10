@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const OptionsContainer = styled.div`
 display: flex;
-max-width: 300px;
+max-width: 320px;
 align-items: center;
+
 `
 export const ButtonContainer = styled.div`
 display: flex;
-justify-content: center;
+justify-content: space-between;
 height: 50%;
 width: 100%;
 margin-left: 10px;
