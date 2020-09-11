@@ -5,5 +5,5 @@ margin-bottom: 20px;
 `
 
 export const GraphPageContainer = styled.div`
-margin: 20px auto;
+margin: 20px;
 `

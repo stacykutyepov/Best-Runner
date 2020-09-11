@@ -24,6 +24,7 @@ import FilterHandler from "../../components/filter/filter-container.component";
 import AddWorkout from "../../components/add-workout-button/add-workout-button.component";
 import NewWorkout from "../../components/new-workout-menu/new-workout.component";
 import WorkoutPreview from "../../components/workout-preview/workout-preview.component";
+import NoWorkout from "../../components/workout-preview/no-workout.component";
 
 const MainPage = ({
   hidden,
@@ -56,7 +57,7 @@ const MainPage = ({
             />
           ))
         ) : (
-          <span>You dont have any workouts.</span>
+          <NoWorkout />
         )}
       </MainPageContainer>
     </MuiThemeProvider>
