@@ -1,5 +1,5 @@
 export const addNewWorkout = (workoutItems, itemToAdd) => {
-    return [...workoutItems, { ...itemToAdd, id: Date.now(), distance: parseInt(itemToAdd.distance) }]
+    return [...workoutItems, { ...itemToAdd, id: Date.now(), distance: parseFloat(itemToAdd.distance) }]
 }
 
 export const deleteWorkout = (workoutItems, itemToDelete) => {
