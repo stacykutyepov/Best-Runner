@@ -16,8 +16,8 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={IntroPage} />
-        <Route exact path="/main" component={MainPage} />
-        <Route exact path="/chart" component={GraphPage} />
+        <Route path="/main" component={MainPage} />
+        <Route path="/chart" component={GraphPage} />
       </Switch>
     </div >
   );

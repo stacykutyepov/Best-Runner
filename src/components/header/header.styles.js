@@ -12,7 +12,7 @@ min-height: 700px;
 position: relative;
 background: url("../../assets/workout-2.jpg");
 background-size: cover;
-background-position: center;
+background-position: 20% 5%;
 background-repeat: no-repeat;
 }
 
