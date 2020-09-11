@@ -30,6 +30,11 @@ export const TypesForm = ({ value, onChange }) => {
 };
 
 export const DistanceForm = ({ error, value, onChange }) => {
+  let helper = "";
+  if (error) {
+    helper = "provide only numbers; example: 9 or 9.6";
+  }
+
   return (
     <TextField
       label="Distance"
@@ -37,6 +42,7 @@ export const DistanceForm = ({ error, value, onChange }) => {
       value={value}
       onChange={onChange}
       error={error}
+      helperText={helper}
       InputProps={{
         startAdornment: <InputAdornment position="start">km</InputAdornment>,
       }}
