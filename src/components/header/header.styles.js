@@ -14,6 +14,10 @@ background: url("../../assets/workout-2.jpg");
 background-size: cover;
 background-position: 20% 5%;
 background-repeat: no-repeat;
+
+@media (max-width: 420px){
+background-position: 50% 5%;
+}
 }
 
 &:before {
