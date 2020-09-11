@@ -1,5 +1,5 @@
 ## Hello! This is the BestRunner App.
-**This App allows you to track your workouts activities, and to view the weekly chart based on your distance.**
+**This App allows you to track your workouts activities, filter them, and view the weekly chart based on your distance.**
 
 <img src="https://user-images.githubusercontent.com/62475313/92962082-6651ad80-f43e-11ea-9637-d7b5f3379874.jpg"/>
 
