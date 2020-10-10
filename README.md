@@ -1,5 +1,5 @@
 ## Hello! This is the BestRunner App.
-**This App allows you to track your workouts activities, filter them, and view the weekly chart based on your distance.**
+
 <img src="https://user-images.githubusercontent.com/62475313/95622358-516a3900-0a41-11eb-8b1c-23bcc353cba9.png" alt="Contacts-app" border="0" width="100%">
 
 </br>
@@ -14,14 +14,21 @@
 
 </br>
 
-- **React.js** to build the front-end;
-- **Redux** for state managemet;
-- **React-router** for routing;
-- **Redux-reselect** to implement complex filter to memoize expensive calculations;
-- **Redux-persist** to save data in localStorage;
-- **Material UI** for Forms and Input Fields;
-- **Styled Components** to keep the concerns of styling and element architecture separated and make components more readable.
-- **Canvas.js** to make the weekly chart with the data;
+**React.js** to build the front-end;
+
+**Redux** for state managemet;
+
+**React-router** for routing;
+
+**Redux-reselect** to implement complex filter to memoize expensive calculations;
+
+**Redux-persist** to save data in localStorage;
+
+**Material UI** for Forms and Input Fields;
+
+**Styled Components** to keep the concerns of styling and element architecture separated and make components more readable.
+
+**Canvas.js** to make the weekly chart with the data;
 
 </br>
 </br>
