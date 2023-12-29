@@ -7,7 +7,7 @@
     "@material-ui/icons": "4.11.2",
     "@testing-library/react": "12.1.5",
     "@testing-library/jest-dom": "5.16.4",
-    "@testing-library/user-event": "13.5.0",
+    "@testing-library/user-event": "14.5.2",
     "canvasjs-react-charts": "1.0.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
